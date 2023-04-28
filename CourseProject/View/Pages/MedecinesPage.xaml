@@ -1,0 +1,66 @@
+﻿<Page x:Class="CourseProject.View.Pages.MedecinesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CourseProject.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MedecinesPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="200" >
+
+                <Button Height="30" Width="180" Margin="00,20,0,10" FontSize="20">Код A</Button>
+                <Button Height="30" Width="180" Margin="00,20,0,10" FontSize="20">Код B</Button>
+                <Button Height="30" Width="180" Margin="00,20,0,10" FontSize="20">Код C</Button>
+                <Button Height="30" Width="180" Margin="00,20,0,10" FontSize="20">Код D</Button>
+                <Button Height="30" Width="180" Margin="00,20,0,10" FontSize="20">Код G</Button>
+                <Button Height="30" Width="180" Margin="00,20,0,10" FontSize="20">Код H</Button>
+                <Button Height="30" Width="180" Margin="00,20,0,10" FontSize="20">Код J</Button>
+               
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="200" Grid.Column="1">
+                <Button Height="30" Width="180" Margin="00,20,0,10" FontSize="20">Код A</Button>
+                <Button Height="30" Width="180" Margin="00,20,0,10" FontSize="20">Код B</Button>
+                <Button Height="30" Width="180" Margin="00,20,0,10" FontSize="20">Код C</Button>
+                <Button Height="30" Width="180" Margin="00,20,0,10" FontSize="20">Код D</Button>
+                <Button Height="30" Width="180" Margin="00,20,0,10" FontSize="20">Код G</Button>
+                <Button Height="30" Width="180" Margin="00,20,0,10" FontSize="20">Код B</Button>
+                <Button Height="30" Width="180" Margin="00,20,0,10" FontSize="20">Код B</Button>
+
+
+            </StackPanel>
+
+        </Grid>
+
+
+       
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                <TextBox HorizontalAlignment="Right" Width="170" Height="30" Margin="20" Text="Поиск лекарства..."></TextBox>
+                </StackPanel>
+                
+                
+            </Grid>
+
+       
+
+
+    </Grid>
+</Page>

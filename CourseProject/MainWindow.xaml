@@ -1,0 +1,28 @@
+﻿<Window x:Class="CourseProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition  Height="80"/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Silver" BorderThickness="1, 0, 0, 1"></Border>
+        <TextBlock HorizontalAlignment="Center" FontFamily="Nunito" VerticalAlignment="Center" FontSize="20" x:Name="MainHeader">Выберите интересующий вас раздел</TextBlock>
+        <TextBlock  HorizontalAlignment="Left" FontFamily="Nunito" VerticalAlignment="Center" FontSize="20" Margin="909,0,0,0" FontWeight="Bold" MouseDown="TextBlock_MouseDown" x:Name="Exit">Выйти</TextBlock>
+        <Image Source="Assets/Images/logo2.png" HorizontalAlignment="Left" />
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated">
+            
+        </Frame>
+
+        <Label x:Name="userLoggedLabel" Grid.Row="2" FontSize="15">
+
+        </Label>
+
+    </Grid>
+</Window>
