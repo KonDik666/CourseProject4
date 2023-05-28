@@ -41,6 +41,7 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -65,6 +66,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Core.cs" />
+    <Compile Include="MedecinesNewAmountDialogWindow.xaml.cs">
+      <DependentUpon>MedecinesNewAmountDialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelecetNewAdressDialogWindow.xaml.cs">
+      <DependentUpon>SelecetNewAdressDialogWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Model\adresses.cs">
       <DependentUpon>PharmacyModel.tt</DependentUpon>
     </Compile>
@@ -74,10 +81,16 @@
     <Compile Include="View\Model\customers.cs">
       <DependentUpon>PharmacyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\Model\medecines_availability.cs">
+      <DependentUpon>PharmacyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="View\Model\medicines.cs">
       <DependentUpon>PharmacyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Model\medicines_photo.cs">
+      <DependentUpon>PharmacyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\Model\ordered_medecines.cs">
       <DependentUpon>PharmacyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Model\orders.cs">
@@ -98,6 +111,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PharmacyModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="View\Model\photo.cs">
+      <DependentUpon>PharmacyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="View\Model\providers.cs">
       <DependentUpon>PharmacyModel.tt</DependentUpon>
     </Compile>
@@ -110,11 +126,44 @@
     <Compile Include="View\Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\MedecineInfoPage.xaml.cs">
+      <DependentUpon>MedecineInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\MedecinesAmount.xaml.cs">
+      <DependentUpon>MedecinesAmount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\MedecinesPage.xaml.cs">
       <DependentUpon>MedecinesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\NewMedecineAddressPage.xaml.cs">
+      <DependentUpon>NewMedecineAddressPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\NewMedecinePage.xaml.cs">
+      <DependentUpon>NewMedecinePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\NewProviderPage.xaml.cs">
+      <DependentUpon>NewProviderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\NewUserPage.xaml.cs">
+      <DependentUpon>NewUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\NewVaultPage.xaml.cs">
+      <DependentUpon>NewVaultPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\ProvidersInfoPage.xaml.cs">
+      <DependentUpon>ProvidersInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\ProvidersMoreInfoPage.xaml.cs">
+      <DependentUpon>ProvidersMoreInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\PurchasePage.xaml.cs">
+      <DependentUpon>PurchasePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\UsersPage.xaml.cs">
       <DependentUpon>UsersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\VaultsListsPage.xaml.cs">
+      <DependentUpon>VaultsListsPage.xaml</DependentUpon>
     </Compile>
     <Page Include="AutorizationWindow.xaml">
       <SubType>Designer</SubType>
@@ -135,7 +184,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MedecinesNewAmountDialogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelecetNewAdressDialogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\StyleDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\MedecineInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\MedecinesAmount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -143,7 +212,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pages\NewMedecineAddressPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\NewMedecinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\NewProviderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\NewUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\NewVaultPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\ProvidersInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\ProvidersMoreInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\PurchasePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\UsersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\VaultsListsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,6 +297,30 @@
     <Resource Include="Assets\Images\logo2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\Images\DB_Images\id1%281%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id1%282%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id2%281%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id2%282%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id10%281%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id10%282%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id3%281%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id3%282%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id4%281%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id4%282%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id5%281%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id5%282%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id6%281%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id6%282%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id7%281%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id8%281%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id11%281%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id11%282%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id12%281%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id12%282%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id13%281%29.png" />
+    <Resource Include="Assets\Images\DB_Images\id13%282%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id14%281%29.jpg" />
+    <Resource Include="Assets\Images\DB_Images\id14%282%29.jpg" />
     <Content Include="View\Model\PharmacyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PharmacyModel.Context.cs</LastGenOutput>
@@ -206,5 +335,12 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StringCheckLibrary\StringCheckLibrary.csproj">
+      <Project>{72afbe76-05ac-4f9c-a40b-c73791b09154}</Project>
+      <Name>StringCheckLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

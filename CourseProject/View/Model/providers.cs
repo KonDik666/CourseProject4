@@ -22,6 +22,7 @@ namespace CourseProject.View.Model
     
         public int id_providers { get; set; }
         public string provider_name { get; set; }
+        public string supplies_date { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<medicines> medicines { get; set; }

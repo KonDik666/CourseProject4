@@ -18,6 +18,7 @@ namespace CourseProject.View.Model
         public customers()
         {
             this.orders = new HashSet<orders>();
+            this.orders1 = new HashSet<orders>();
         }
     
         public int id_customers { get; set; }
@@ -29,5 +30,7 @@ namespace CourseProject.View.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<orders> orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<orders> orders1 { get; set; }
     }
 }

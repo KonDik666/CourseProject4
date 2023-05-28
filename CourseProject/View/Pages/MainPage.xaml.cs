@@ -39,5 +39,20 @@ namespace CourseProject.View.Pages
         {
             NavigationService.Navigate(new UsersPage());
         }
+
+        private void adressesButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new VaultsListsPage());
+        }
+
+        private void purchaseButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PurchasePage());
+        }
+
+        private void providersInfoButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ProvidersInfoPage());
+        }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b8a7c96ef0e848d8a6b3f10a796148b4" Name="Diagram1">
+      <Diagram DiagramId="b8a7c96ef0e848d8a6b3f10a796148b4" Name="Diagram1" ZoomLevel="83">
         <EntityTypeShape EntityType="pharmasyModel.adresses" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="pharmasyModel.building" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="pharmasyModel.customers" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
@@ -21,6 +21,16 @@
         <AssociationConnector Association="pharmasyModel.FK_medicines_providers" ManuallyRouted="false" />
         <AssociationConnector Association="pharmasyModel.FK_orders_medicines" ManuallyRouted="false" />
         <AssociationConnector Association="pharmasyModel.FK_orders_user" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="pharmasyModel.medecines_availability" Width="1.5" PointX="10.875" PointY="2.875" />
+        <AssociationConnector Association="pharmasyModel.FK_medecines_availability_adresses" />
+        <AssociationConnector Association="pharmasyModel.FK_medecines_availability_medicines" />
+        <EntityTypeShape EntityType="pharmasyModel.photo" Width="1.5" PointX="0.75" PointY="8.875" />
+        <AssociationConnector Association="pharmasyModel.FK_medicines_photo" />
+        <AssociationConnector Association="pharmasyModel.FK_photo_medicines" />
+        <AssociationConnector Association="pharmasyModel.FK_orders_customers1" />
+        <EntityTypeShape EntityType="pharmasyModel.ordered_medecines" Width="1.5" PointX="10.875" PointY="0.75" />
+        <AssociationConnector Association="pharmasyModel.FK_ordered_medecines_medicines" />
+        <AssociationConnector Association="pharmasyModel.FK_ordered_medecines_orders" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

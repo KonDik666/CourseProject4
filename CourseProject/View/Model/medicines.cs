@@ -18,6 +18,9 @@ namespace CourseProject.View.Model
         public medicines()
         {
             this.orders = new HashSet<orders>();
+            this.medecines_availability = new HashSet<medecines_availability>();
+            this.photo1 = new HashSet<photo>();
+            this.ordered_medecines = new HashSet<ordered_medecines>();
         }
     
         public int id_medicines { get; set; }
@@ -29,10 +32,18 @@ namespace CourseProject.View.Model
         public Nullable<int> sale_cost { get; set; }
         public Nullable<int> providers_id_providers { get; set; }
         public Nullable<int> medicines_photo_id_medicines_photo { get; set; }
+        public Nullable<int> photo_id_photo { get; set; }
     
         public virtual medicines_photo medicines_photo { get; set; }
         public virtual providers providers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<orders> orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<medecines_availability> medecines_availability { get; set; }
+        public virtual photo photo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<photo> photo1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ordered_medecines> ordered_medecines { get; set; }
     }
 }

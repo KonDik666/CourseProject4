@@ -20,7 +20,7 @@
 
                 <StackPanel Orientation="Vertical">
                     <Button Height="70" Width="200" Margin="00,35,0,20" FontSize="20" x:Name="medecinesButton" Click="medecinesButton_Click">Лекарства</Button>
-                    <Button Height="70" Width="200" Margin="00,35,0,20" FontSize="20" >
+                    <Button Height="70" Width="200" Margin="00,35,0,20" FontSize="20" x:Name="adressesButton" Click="adressesButton_Click">
                         <TextBlock TextAlignment="Center"> Наши аптеки <LineBreak/> и склады</TextBlock>
                     </Button>
                     <Button Height="70" Width="200" Margin="00,35,0,20" FontSize="20" x:Name="usersButton" Click="usersButton_Click">Пользователи</Button>
@@ -28,10 +28,10 @@
 
                 <StackPanel Orientation="Vertical" Grid.Column="1">
                     <Button Height="70" Width="200" Margin="00,35,0,20" FontSize="20">Продажи</Button>
-                    <Button Height="70" Width="200" Margin="00,35,0,20" FontSize="20" x:Name="providersInfoButton">
+                    <Button Height="70" Width="200" Margin="00,35,0,20" FontSize="20" x:Name="providersInfoButton" Click="providersInfoButton_Click">
                         <TextBlock TextAlignment="Center">Информация о<LineBreak/>поставщиках</TextBlock>
                     </Button>
-                    <Button Height="70" Width="200" Margin="00,35,0,20" FontSize="20">Окно покупки</Button>
+                    <Button Height="70" Width="200" Margin="00,35,0,20" FontSize="20" x:Name="purchaseButton" Click="purchaseButton_Click">Окно покупки</Button>
                 </StackPanel>
 
 

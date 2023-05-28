@@ -10,9 +10,13 @@
       Title="UsersPage">
 
     <Grid>
-        <DataGrid x:Name="usersInfoGrid" AutoGenerateColumns="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="370"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid  Style="{DynamicResource DataGridStyle1}" x:Name="usersInfoGrid" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id в базе" Binding="{Binding id_user}" Width="*"/>
+              
                 <DataGridTextColumn Header="Имя" Binding="{Binding name}" Width="*"/>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding surname}" Width="*"/>
                 <DataGridTextColumn Header="Отчество" Binding="{Binding patronymic}" Width="*"/>
@@ -23,6 +27,13 @@
 
             </DataGrid.Columns>
         </DataGrid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Width="100px" Height="50px" Margin="15" Background="#613F9D" Foreground="White" Content="Добавить" FontSize="20" x:Name="addUserButton" Click="addUserButton_Click"/>
+            <Button Width="100px" Height="50px" Margin="15" Background="#613F9D" Foreground="White" Content="Изменить" FontSize="20" x:Name="changeUserInfoButton" Click="changeUserInfoButton_Click"/>
+            <Button Width="100px" Height="50px" Margin="15" Background="#613F9D" Foreground="White" Content="Удалить" FontSize="20" x:Name="removeUserButton" Click="removeUserButton_Click"/>
+
+        </StackPanel>
         
     </Grid>
 </Page>

@@ -34,5 +34,8 @@ namespace CourseProject.View.Model
         public virtual DbSet<providers> providers { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<user> user { get; set; }
+        public virtual DbSet<medecines_availability> medecines_availability { get; set; }
+        public virtual DbSet<photo> photo { get; set; }
+        public virtual DbSet<ordered_medecines> ordered_medecines { get; set; }
     }
 }

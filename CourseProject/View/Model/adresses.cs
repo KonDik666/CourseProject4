@@ -18,15 +18,19 @@ namespace CourseProject.View.Model
         public adresses()
         {
             this.orders = new HashSet<orders>();
+            this.medecines_availability = new HashSet<medecines_availability>();
         }
     
         public int id_adresses { get; set; }
         public string city { get; set; }
         public string adress { get; set; }
         public Nullable<int> building_id_building { get; set; }
+        public Nullable<int> is_last_selected { get; set; }
     
         public virtual building building { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<orders> orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<medecines_availability> medecines_availability { get; set; }
     }
 }

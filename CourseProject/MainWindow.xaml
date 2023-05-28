@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CourseProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000">
+        Title="MainWindow" Height="700" Width="1000" MaxHeight="700" MaxWidth="1000" MinHeight="700" MinWidth="1000" Icon="Assets/Images/logo.png" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
@@ -16,13 +16,32 @@
         <TextBlock HorizontalAlignment="Center" FontFamily="Nunito" VerticalAlignment="Center" FontSize="20" x:Name="MainHeader">Выберите интересующий вас раздел</TextBlock>
         <TextBlock  HorizontalAlignment="Left" FontFamily="Nunito" VerticalAlignment="Center" FontSize="20" Margin="909,0,0,0" FontWeight="Bold" MouseDown="TextBlock_MouseDown" x:Name="Exit">Выйти</TextBlock>
         <Image Source="Assets/Images/logo2.png" HorizontalAlignment="Left" />
-        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated">
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated" >
             
         </Frame>
 
-        <Label x:Name="userLoggedLabel" Grid.Row="2" FontSize="15">
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="userLoggedLabel"  FontSize="15">
 
-        </Label>
+            </Label>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="locationLabel" Grid.Column="0"></Label>
+                <Button x:Name="changeLocationButton" Grid.Column="1"  Background="#613F9D" Foreground="White" Width="200" Height="60" FontSize="25" Click="changeLocationButton_Click">Поменять</Button>
+            </Grid>
+
+            
+
+        </Grid>
+
+       
 
     </Grid>
 </Window>
