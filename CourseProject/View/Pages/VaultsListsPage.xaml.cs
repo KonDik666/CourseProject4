@@ -46,14 +46,29 @@ namespace CourseProject.View.Pages
 
         private void removeAdressButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Вы действительно хотите удалить данного адрес?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Вы действительно хотите удалить данного адрес? Это приведет к обнулении связанной с ним информации в базе", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
+                List<medecines_availability> lstMedAvailability = new List<medecines_availability>();
                 var SelectedAdress = adressesInfoGrid.SelectedItem as adresses;
-                db.context.adresses.Remove(SelectedAdress);
-                db.context.SaveChanges();
+                lstMedAvailability = db.context.medecines_availability.Where(x => x.adresses_id_adresses == SelectedAdress.id_adresses).ToList();
+                if (SelectedAdress.id_adresses == App.currentAdressName.id_adresses)
+                {
+                    MessageBox.Show("Удалить текущий адрес невозможно");
+                }
+                else
+                {
+                    for (int i = 0; i < lstMedAvailability.Count; i++)
+                    {
+                        db.context.medecines_availability.Remove(lstMedAvailability[i]);
+                    }
 
-                adressesInfoGrid.ItemsSource = db.context.user.ToList();
-                MessageBox.Show("Адрес успешно удален");
+                    db.context.adresses.Remove(SelectedAdress);
+                    db.context.SaveChanges();
+
+                    adressesInfoGrid.ItemsSource = db.context.user.ToList();
+                    MessageBox.Show("Адрес успешно удален");
+                }
+              
             }
         }
     }

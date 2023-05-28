@@ -1,6 +1,7 @@
 ﻿using CourseProject.View.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -142,13 +143,41 @@ namespace CourseProject.View.Pages
            
 
             newOrder.medecines_list = s;
+            ordered_medecines orderedMed = new ordered_medecines();
+            List<medecines_availability> descendingAmounts = new List<medecines_availability>();
+            medecines_availability addingMedAvail = new medecines_availability();
 
+           
+            
+           
             db.context.orders.Add(newOrder);
             db.context.SaveChanges();
 
-            ordered_medecines orderedMed = new ordered_medecines();
+           
+
+            for (int i=0; i < App.selectedToOrderMedecines.Count; i++)
+            {
+                int a = App.selectedToOrderMedecines[i].id_medicines;
+
+                //descendingAmounts = db.context.medecines_availability.Where(x => x.medecines_id_medecines ==a && x.adresses_id_adresses==App.currentAdressName.id_adresses).ToList();
+                medecines_availability descendingAmount = db.context.medecines_availability.Where(x => x.medecines_id_medecines == a & x.adresses_id_adresses == App.currentAdressName.id_adresses).FirstOrDefault();
+                descendingAmounts.Add(descendingAmount);
+            }  
+           
+            Console.WriteLine("ytyt"+ descendingAmounts.Count);
+
             for(int i=0; i < App.selectedToOrderMedecines.Count; i++)
             {
+
+                //Convert.ToInt32(descendingAmounts[i].amount_of_medecines) = descendingAmounts[i].amount_of_medecines- Convert.ToInt32(amounts[i].Text);
+
+                //addingMedAvail.amount_of_medecines = (Convert.ToInt32(descendingAmounts[i].amount_of_medecines) - Convert.ToInt32(amounts[i].Text)).ToString();
+               
+                descendingAmounts[i].amount_of_medecines = (Convert.ToInt32(descendingAmounts[i].amount_of_medecines) - Convert.ToInt32(amounts[i].Text)).ToString();
+                db.context.medecines_availability.AddOrUpdate(descendingAmounts[i]);
+                db.context.SaveChanges();
+                Console.WriteLine("gtgtee" + descendingAmounts[i].amount_of_medecines);
+
                 orderedMed.orders_id_orders = newOrder.id_orders;
                 orderedMed.medicines_id_medicines = App.selectedToOrderMedecines[i].id_medicines;
                 orderedMed.selected_medecines_amount = Convert.ToInt32(amounts[i].Text);

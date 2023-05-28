@@ -151,7 +151,7 @@ namespace CourseProject.View.Pages
 
         private void newAddressOfMedecineButton_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new NewMedecineAddressPage());
         }
     }
 }
